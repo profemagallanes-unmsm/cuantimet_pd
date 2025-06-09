@@ -1,0 +1,23 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+```{r}
+linkMerge='https://github.com/profemagallanes-unmsm/cuantimet_pd/raw/refs/heads/main/elecpob.csv'
+merge=read.csv(linkMerge)
+str(merge)
+```
+Analisis de regresion en R para saber si la pobreza afecta la proporcion de votos de de Castillo, y de que manera si fuera el caso.
+
+```{r}
+h1=formula(CastilloProp~pobreza)
+
+r1=lm(h1,data=merge)
+
+summary(r1)
+
+```
+
